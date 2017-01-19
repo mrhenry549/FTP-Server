@@ -13,22 +13,17 @@ import java.util.Scanner;
 
 public class ClientModule {
 
-    public final static int SOCKET = 21;
+    public final static int SOCKET = 21, FILE_SIZE = 6022386;
     public final static String SERVER = "192.168.250.231";
-
-    public final static int FILE_SIZE = 6022386;
     
     public String FILE_TO_RECEIVED;
+    
     Scanner s = new Scanner(System.in);
     String nomeFicheiro;
     
-    int i;
     PrintWriter out;
     BufferedReader in;
-    String inLine;
-        
-    File pasta = new File("C:/Java/");
-    File[] listaDeFicheiros = pasta.listFiles();
+    String inLine, outLine;
 
     public ClientModule() throws IOException {
         int bytesRead;
@@ -41,7 +36,7 @@ public class ClientModule {
             
             System.out.println("conectando...");
             
-            //Receber o array de ficheiros
+            //Receber o array de ficheiros ***********************
             
             out = new PrintWriter(sock.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(sock.getInputStream())); 
@@ -54,11 +49,13 @@ public class ClientModule {
             
             nomeFicheiro = s.nextLine();
             
-            out.println(nomeFicheiro); 
-
-            FILE_TO_RECEIVED = "C:/Users/Henrique/Downloads/"+nomeFicheiro;
+            //out.println(nomeFicheiro); 
             
-            // receber o ficheiro
+            FILE_TO_RECEIVED = "C:/Users/Henrique/Downloads/Mock up quests 2.txt";
+
+            //FILE_TO_RECEIVED = "C:/Users/Henrique/Downloads/"+nomeFicheiro;
+            
+            // receber o ficheiro ***********************
             byte[] bytearray2 = new byte[FILE_SIZE];
             InputStream is2 = sock.getInputStream();
             fos2 = new FileOutputStream(FILE_TO_RECEIVED);
@@ -75,8 +72,7 @@ public class ClientModule {
 
             bos2.write(bytearray2, 0, current);
             bos2.flush();
-            System.out.println("Ficheiro " + FILE_TO_RECEIVED
-                    + " transferido (" + current + " bytes lidos)");
+            System.out.println("Ficheiro " + FILE_TO_RECEIVED + " transferido (" + current + " bytes lidos)");
         } finally {
             if (fos2 != null) {
                 fos2.close();

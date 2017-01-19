@@ -75,13 +75,15 @@ public final class ServerModule {
 
 /******************************************************************************/
                     
-                    inputLine = in.readLine(); //não tenho a certeza
+                    FILE_TO_SEND = "C:/Java/Mock up quests.txt";
+
+                    /*inputLine = in.readLine(); //não tenho a certeza
 
                     for (File file : listaDeFicheiros) {
                         if (file.toString() == inputLine) {
                             FILE_TO_SEND = "C:/Java/"+file.toString();
                         }
-                    }
+                    }*/
 
                     // enviar o ficheiro
                     File myFile = new File(FILE_TO_SEND);
