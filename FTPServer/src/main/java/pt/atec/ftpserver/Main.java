@@ -7,8 +7,8 @@ import pt.atec.network.ServerModule;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        //ServerModule s = new ServerModule();
-        ClientModule c = new ClientModule();
+        ServerModule s = new ServerModule();
+        //ClientModule c = new ClientModule();
     }
 
 }
