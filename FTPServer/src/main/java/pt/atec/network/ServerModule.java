@@ -32,7 +32,7 @@ public final class ServerModule {
 
                     for (File file : listaDeFicheiros) {
                         if (file.isFile()) {
-                            sb.append(i).append(file).append(",");
+                            sb.append(i).append(". ").append(file).append(",");
                             i++;
                         }
                     }
@@ -64,9 +64,9 @@ public final class ServerModule {
 
             }
 
-        } catch (Exception saranvi) {
+        } catch (Exception e) {
 
-            System.out.print(saranvi);
+            System.out.print(e);
 
         }
 
