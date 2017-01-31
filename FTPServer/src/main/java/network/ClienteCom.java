@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pt.atec.network;
+package network;
 
 import java.io.DataInputStream;
 import java.net.Socket;
 
-public class ClienteNome {
+public class ClienteCom {
     private final int PORTO = 80;
     private final String IP = "192.168.250.250";
-    public String msgin = "";
+    public int msgin = 0;
 
-    public ClienteNome() {
+    public ClienteCom() {
         try {
 
             Socket sock = new Socket(IP, PORTO);
 
             DataInputStream din = new DataInputStream(sock.getInputStream());
 
-            msgin = din.readUTF(); 
+            msgin = din.read();
 
         } catch (Exception e) {
 

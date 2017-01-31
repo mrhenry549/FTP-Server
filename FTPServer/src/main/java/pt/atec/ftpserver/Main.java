@@ -1,17 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package pt.atec.ftpserver;
 
 import java.io.IOException;
-import java.util.Scanner;
-import pt.atec.network.ClienteArray;
-import pt.atec.network.ClienteFile;
-import pt.atec.network.ServerCom;
+import network.ServerArray;
+import network.ServerFile;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        ServerCom sc = new ServerCom();
+        ServerArray sa = new ServerArray();
         
-        ClienteFile cf = new ClienteFile();
+        ServerFile sf = new ServerFile();
     }
-
+    
 }
